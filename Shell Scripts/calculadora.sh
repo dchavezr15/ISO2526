@@ -66,6 +66,8 @@ for ((i=0;i<$2;i++)); do
 	                res=$(($op1 / $op2))
 	                echo $res
 			echo "$op $op1 $op2" >> $1
+			resto=$(($op1 % $op2))
+			echo "Resto: $resto"
 			echo
 	        ;;
 
@@ -84,5 +86,5 @@ for ((i=0;i<$2;i++)); do
 done
 
 # Mostrar ruta completa del fichero $1 y su contenido.
-pwd $1
+realpath "$1"
 cat $1
